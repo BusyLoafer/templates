@@ -1,0 +1,13 @@
+.simpleImage {
+  &-rounded {
+    border-radius: 4px;
+  }
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.stretch {
+  object-fit: cover;
+}

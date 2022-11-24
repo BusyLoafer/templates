@@ -1,0 +1,51 @@
+.quizSentence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .label {
+    align-self: flex-start;
+    padding: 0 16px;
+  }
+
+  .pageRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px 8px;
+  }
+
+  .areaGroup {
+    display: flex;
+    flex: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin: 12px 0 32px;
+    padding: 0 16px;
+    position: relative;
+    width: calc(100% - 14px);
+  }
+
+  .delimiter {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    border-top: 1px solid #D2DAE1;
+    width: inherit;
+    height: 1px;
+  }
+  .btn {
+    margin: 0 4px 8px;
+  }
+}

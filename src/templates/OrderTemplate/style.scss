@@ -1,0 +1,46 @@
+.orderTemplate {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+
+  .abs {
+    position: absolute;
+  }
+
+  .emptyRound {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border: 2px dashed #A1ABCD;
+    &-active {
+      border: 2px solid #7480FF;
+    }
+  }
+
+  .number {
+    background-color: #F5F5F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .emptyPoint {
+    border-radius: 16px;
+    background-color: #A1ABCD;
+  }
+
+  .fixImage {
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid #A1ABCD;
+    &-active {
+      border: 2px solid #7480FF;
+    }
+    &-done {
+      border: 2px solid #77C801;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.drawTemplate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  .abs {
+    position: absolute;
+  }
+
+  .lines {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: #B0B8FF;
+    opacity: 0.34;
+  }
+  .drawArea {
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    cursor: pointer;
+  }
+
+  .circleWrapper {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #F2C017;
+    background-color: #FFD033;
+    border-radius: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+    cursor: pointer;
+    .circle {
+      width: 12px;
+      height: 12px;
+      border: 4px solid #D07D22;
+      border-radius: 10px;
+    }
+  }
+}

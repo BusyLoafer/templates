@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoWrapper {
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.videoBox {
+  border-radius: 16px;
+}
+
+.videoPlayer {
+  
+}
+
+.image {
+  border-radius: 4;
+  object-fit: contain;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.playButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}

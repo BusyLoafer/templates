@@ -1,0 +1,20 @@
+.animateBtnsPanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  .swowBtn {
+    margin: 0 4px 4px;
+  }
+}
+
+.lettersPanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+  .swowBtn {
+    margin: 0 4px 4px;
+  }
+}

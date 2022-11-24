@@ -1,0 +1,43 @@
+.quizImageTemplate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .images {
+    margin: 0 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image-wrapper {
+      display: flex;
+      margin: 6px;
+      &-anim {
+        animation: bounce-in 1s ease;
+      }
+    }
+  }
+
+  .correctImage {
+    position: absolute;
+    z-index: 90;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

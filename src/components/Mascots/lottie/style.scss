@@ -1,0 +1,65 @@
+.mascotWrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  position: relative;
+}
+
+.mascotCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mascotBox {
+  position: absolute;
+  z-index: 500;
+  // background-color: aqua;
+}
+
+.mascotWithText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  .dialog {
+    border: 1px solid #F0F2F6;
+    border-radius: 20px;
+    padding: 4px 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: white;
+    position: relative;
+  }
+  .text {
+    color: #121C42;
+    font-family: "Nunito-Bold";
+    flex-shrink: 1;
+    padding: 4px 0 4px 12px;
+  }
+  .comment_rec {
+    position: absolute;
+    top: 4px;
+    left: -3px;
+    width: 12px;
+    height: 18px;
+    border-top: 1px solid #F0F2F6;
+    border-left: 1px solid #F0F2F6;
+    background-color: white;
+    transform: rotate3d(0, 1, 1, -12deg);
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}

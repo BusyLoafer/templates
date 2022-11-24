@@ -1,0 +1,19 @@
+.questionPanel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .abs {
+    position: absolute;
+  }
+
+  .question {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 11;
+  }
+}

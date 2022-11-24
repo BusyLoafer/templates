@@ -1,0 +1,29 @@
+.outInFadeScale {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.cardFlip {
+  perspective: 1000px;
+
+  .card-inner {
+    transform-style: preserve-3d;
+  }
+
+  .fcard {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    &-back {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.bubble {
+  position: absolute;
+  cursor: pointer;
+}

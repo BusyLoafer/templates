@@ -1,0 +1,24 @@
+.quizTemplate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .wordBtn {
+    margin: 0 4px 4px;
+  }
+
+  .check {
+    &-wrapper {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-round {
+      display: flex;
+      background-color: #77C801;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

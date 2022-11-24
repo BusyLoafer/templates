@@ -1,0 +1,54 @@
+
+.track {
+  &-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    width: calc(100% - 32px);
+    bottom: 88px;
+    padding: 0 8px;
+  }
+
+  &-left {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 8px;
+  }
+}
+
+
+.slider {
+  height: 24px;
+  &-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    border: 6px solid #7480FF;
+    background: white;
+    cursor: grab;
+  }
+
+  &-track {
+    border-radius: 8px;
+    height: 8px;
+    top: 8px;
+    &-0 {
+      background-color: #7480FF;
+    }
+    &-1 {
+      background: #E5E8FF;
+    }
+  }
+}
+
+.time {
+  margin-top: 8px;
+}

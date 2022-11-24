@@ -1,0 +1,29 @@
+.fillwordsTemplate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+
+  .fillwordBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .line {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    pointer-events: none;
+  }
+  
+  .letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+}

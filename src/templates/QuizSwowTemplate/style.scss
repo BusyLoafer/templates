@@ -1,0 +1,93 @@
+.quizSwowTemplate {
+
+  $btnSize: 47px;
+  $btnSizeCoef: 1.2;
+  $btnAreaPadding: 8;
+  $btnBorderRadius: 16px;
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .areaGroup {
+    display: flex;
+    flex: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .areaGroup {
+    margin-bottom: 32px;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .area {
+    border-radius: 16px;
+    border: 1px solid #D2DAE1;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 2px 4px;
+  }
+
+
+  .area {
+    display: flex;
+    border: #D2DAE1 1px solid;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px 4px;
+    width: $btnSize * $btnSizeCoef + $btnAreaPadding * $btnSizeCoef;
+    height: $btnSize * $btnSizeCoef + $btnAreaPadding * $btnSizeCoef;
+    border-radius: $btnBorderRadius + $btnAreaPadding * $btnSizeCoef * 0.5;
+    &-empty {
+      background-color: #F0F2F6;
+    }
+  }
+
+  .swowBtn {
+    margin: 0 4px 4px;
+  }
+
+  @keyframes ani {
+    0% {
+      opacity: 0;
+      transform: translateY(-72px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes ani2 {
+    0% {
+      opacity: 0;
+      scale: 0;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  .anim-image {
+    opacity: 0;
+    transform: translateY(-72px);
+    animation: ani 0.5s forwards;
+  }
+
+  .anim-image2 {
+    opacity: 0;
+    scale: 0;
+    animation: ani2 0.5s forwards;
+  }
+}

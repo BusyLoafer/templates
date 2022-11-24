@@ -1,0 +1,49 @@
+.rowTemplate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .abs {
+    position: absolute;
+  }
+
+  .emptyRound {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  } 
+
+  .number {
+    background-color: #F5F5F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .group {
+    border-radius: 8px;
+    border: 1px solid #D2DAE1;
+    &-error {
+      border: 1px solid #EC5569;
+    }
+    &-success {
+      border: 1px solid #77C801;
+    }
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #D2DAE1;
+    &-active {
+      border: 1px solid #7480FF;
+    }
+  }
+}
+

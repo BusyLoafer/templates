@@ -1,0 +1,318 @@
+:root {
+  --baseScale: 1;
+}
+
+.panelBtn {
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff 2px solid;
+}
+
+.reverse {
+  transform: scaleX(-1);
+}
+
+.flashBtn {
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff 2px solid;
+  z-index: 20;
+}
+
+.flashStyle {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 100px;
+  display: flex;
+
+  &-active {
+    background-color: #AFEA59;
+  }
+}
+
+.centerBtn {
+  display: flex;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+
+  &-active {
+    background-color: #77C801;
+  }
+}
+
+// @import url('../../../sass/_vars.scss');
+// @use '../../../sass/_vars.scss';
+
+$defaultColor: #EAEFFC;
+$defaultShadow: #C0C8DE;
+$defaultDis: #BCC8DA;
+
+$errorColor: #EC5569;
+$errorShadow: #CC2F38;
+$errorDis: #BB3B4C;
+
+$successColor: #77C801;
+$successShadow: #57A405;
+$successDis: #57A405;
+
+$choosenColor: #7480FF;
+$choosenShadow: #4C58DD;
+$choosenDis: #4C58DD;
+
+$textDefault: #000;
+$textWhite: #fff;
+
+$scale: 1.2;
+$btnSize: 47px;
+$imgBtnSize: 162px;
+$btnShadowSize: 4px;
+$btnBorderRadius: 16px;
+$btnWordFontSize: 16px;
+$btnFontSize: 20px;
+$btnLineHeightCoef: 1.4;
+
+// YutuButton
+
+@mixin btn-click($colorShadow, $bgColor, $color, $active: true) {
+  box-shadow: 0 $btnShadowSize * $scale $colorShadow;
+  background-color: $bgColor;
+  color: $color;
+  @if $active {
+    &:active {
+      box-shadow: 0 0;
+      margin-top: $btnShadowSize * $scale;
+    }
+  }
+}
+
+.yutuBtn {
+  height: $btnSize * $scale;
+  display: flex;
+  min-width: $btnSize * $scale;
+  cursor: pointer;
+
+  .text {
+    text-align: center;
+    font-family: "Nunito-SemiBold";
+    font-size: $btnFontSize * $scale;
+    line-height: $btnFontSize * $scale;
+
+    &-word {
+      padding: auto 16;
+      font-size: $btnWordFontSize * $scale;
+      line-height: $btnWordFontSize * $scale;
+    }
+  }
+}
+
+.y-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $btnSize * $scale;
+  height: $btnSize * $scale - $btnShadowSize * $scale;
+  border-radius: $btnBorderRadius;
+
+  &-default {
+    @include btn-click($defaultShadow, $defaultColor, $textDefault);
+  }
+
+  &-error {
+    @include btn-click($errorShadow, $errorColor, $textWhite);
+  }
+
+  &-success {
+    @include btn-click($successShadow, $successColor, $textWhite);
+  }
+
+  &-choosen {
+    @include btn-click($choosenShadow, $choosenColor, $textWhite);
+  }
+
+  &-empty {
+    padding-top: $btnShadowSize * $scale;
+    background-color: $defaultColor;
+    color: $textWhite;
+    backface-visibility: hidden;
+    // margin-top: $btnShadowSize * $scale;
+    // height: $btnSize * $scale - $btnShadowSize * $scale * 2;
+    cursor: default;
+
+    .text {
+      opacity: 0;
+    }
+  }
+
+  &-word {
+    width: 100%;
+    min-width: auto;
+    padding: 0 16px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// ImageButton
+
+
+@mixin btn-img-click($colorShadow, $borderColor, $active: true) {
+  box-shadow: 0 $btnShadowSize $colorShadow;
+  border: $borderColor 2px solid;
+  @if $active {
+    &:active {
+      box-shadow: 0 0;
+      margin-top: $btnShadowSize;
+    }
+  }
+}
+
+.imageButton {
+  width: $imgBtnSize;
+  height: $imgBtnSize;
+  cursor: pointer;
+
+  .imgBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $imgBtnSize;
+    height: $imgBtnSize - $btnShadowSize;
+    background-color: #FFFFFF;
+
+    &-default {
+      @include btn-img-click($defaultShadow, $defaultColor);
+    }
+
+    &-default-dis {
+      @include btn-img-click($defaultShadow, $defaultDis);
+    }
+
+    &-error {
+      @include btn-img-click($errorShadow, $errorColor, false);
+    }
+
+    &-error-dis {
+      @include btn-img-click($errorShadow, $errorDis, false);
+    }
+
+    &-success {
+      @include btn-img-click($successShadow, $successColor);
+    }
+
+    &-success-dis {
+      @include btn-img-click($successShadow, $successDis);
+    }
+
+    &-choosen {
+      @include btn-img-click($choosenShadow, $choosenColor);
+    }
+
+    &-choosen-dis {
+      @include btn-img-click($choosenShadow, $choosenDis);
+    }
+  }
+}
+
+// LetterButton
+
+@mixin btn-click($colorShadow, $bgColor, $color, $active: true) {
+  box-shadow: 0 $btnShadowSize * $scale $colorShadow;
+  background-color: $bgColor;
+  color: $color;
+  @if $active {
+    &:active {
+      box-shadow: 0 0;
+      margin-top: $btnShadowSize * $scale;
+    }
+  }
+}
+
+.l-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 16px;
+  //min-width: 58px;
+  //min-height: 54px;
+  transition-property: all;
+  transition-duration: 0.3s;
+
+  &-default {
+    border: 2px solid #EAF5FF;
+    box-shadow: 0 2px 4px rgba(222, 226, 252, 0.12), 0 2px 0 #E0F1FE;
+    cursor: pointer;
+  }
+
+  &-empty {
+    background: #F6F7FD;
+    box-shadow: 0 2px 4px  #FFF, 0 2px 0 #FFF;
+
+    p {
+      visibility: hidden;
+    }
+  }
+
+  &-text {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+}
+
+.letterArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid #E1E4FB;
+  background: #F6F7FD;
+  transition-property: all;
+  transition-duration: 0.3s;
+
+  color: #4A4F66;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+
+  &-choosen {
+    background: #FFF;
+    color: #4A4F66;
+    cursor: pointer;
+  }
+
+  &-success {
+    background: #FFF;
+    color: #88D557;
+  }
+
+  &-error {
+    background: #FFF;
+    color: #F96F5C;
+  }
+
+  p {
+    transition-property: all;
+    transition-duration: 0.1s;
+  }
+}
