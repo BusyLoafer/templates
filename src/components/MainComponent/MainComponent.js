@@ -1,8 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Virtual } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import './style.scss';
-import 'swiper/swiper.scss';
 import UpPanel from '../Panels/UpPanel/UpPanel';
 import BottomPanel from '../Panels/BottomPanel/BottomPanel';
 import { allData } from '../../lib/tempData';
@@ -62,10 +59,12 @@ const MainComponent = props => {
   }, [])
 
   useEffect(() => {
-    if (swiperRef && swiperRef.width) {
-      calculateCoef({ width: swiperRef.width, height: swiperRef.height })
-    }
-  }, [swiperRef]);
+    setTimeout(() => {
+      if (sw.current) {
+        calculateCoef({ width: sw.current.clientWidth, height: sw.current.clientHeight })
+      }
+    }, 100)
+  }, []);
 
   useEffect(() => {
     if (courseId) {
@@ -98,14 +97,17 @@ const MainComponent = props => {
 
   const onNextClick = value => {
     if (value < 0) {
-      swiperRef.slidePrev(0)
+      // swiperRef.slidePrev(0)
+      onIndexChanged(0)
     } else {
       checkFinish(onExit)
-      swiperRef.slideNext(0)
+      // swiperRef.slideNext(0)
+      onIndexChanged(lessonId + 1)
     }
   }
 
   const templateType = (ex, index) => {
+    if (!ex || index < 0) return null
     if (ex[EX_CONTENT_TYPE.info]) {
       return <InfoTemplate ex={ex} />
     } else if (ex[EX_CONTENT_TYPE.audioAbc]) {
@@ -159,17 +161,23 @@ const MainComponent = props => {
     <div className='mainApp' id="yutu-templates">
       <div className='mainSwiper'>
         <UpPanel onExit={onExit} lessonTitle={lessonTitle} />
-        <Swiper
-          modules={[Virtual]}
-          slidesPerView={1}
-          virtual
+        <div
           ref={sw}
-          allowTouchMove={false}
-          onSwiper={setSwiperRef}
-          onActiveIndexChange={onActiveIndexChange}
+          // style={{
+          //   flex: 1,
+          //   flexGrow: 1,
+          //   height: "100%"
+          // }}
+          className="swiper"
+          id="swiper"
         >
-          {renderExercise()}
-        </Swiper>
+          {
+            exercises.length &&
+            <div className="swiper-slide">
+              {templateType(exercises[lessonId], lessonId)}
+            </div>
+          }
+        </div>
         <ConfettiBox />
         <Mascots />
         <BottomPanel onNextClick={onNextClick} />
